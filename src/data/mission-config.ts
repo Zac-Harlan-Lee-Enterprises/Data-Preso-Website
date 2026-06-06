@@ -58,17 +58,17 @@ export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progre
 
 export const CREW_CONFIG: Record<string, { rank: string; role: string; strategicDomain: string }> = {
   fletcher: {
-    rank:             'Captain',
+    rank:             'Starfleet Command',
     role:             'Chief Information Officer',
     strategicDomain:  'Executive AI & Data Strategy',
   },
   harlan: {
-    rank:             'First Officer',
-    role:             'Platform Architecture',
+    rank:             'Captain',
+    role:             'Mission Commander & Platform Architect',
     strategicDomain:  'Platform Architecture & Delivery',
   },
   turner: {
-    rank:             'Chief Operations Officer',
+    rank:             'First Officer',
     role:             'Bridge Operations Lead',
     strategicDomain:  'Operational Excellence & Delivery',
   },
@@ -83,12 +83,12 @@ export const CREW_CONFIG: Record<string, { rank: string; role: string; strategic
     strategicDomain:  'Core Infrastructure & Reliability',
   },
   markendorf: {
-    rank:             'Science Officer',
+    rank:             'Data Intelligence Officer',
     role:             'Data Intelligence & Reconnaissance',
     strategicDomain:  'Data Intelligence & Analytics',
   },
   mueller: {
-    rank:             'Transporter Chief',
+    rank:             'Chief Integration Engineer',
     role:             'Platform Integration Engineer',
     strategicDomain:  'Systems Integration & Connectivity',
   },
