@@ -11,7 +11,7 @@ import {
   Play,
 } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
-import { ACTIVE_CREW } from '@/data/crew';
+import { ACTIVE_CREW, DIVISION_COLORS } from '@/data/crew';
 import { cn, publicUrl } from '@/lib/utils';
 
 const NAV_ITEMS = [
@@ -134,10 +134,15 @@ export default function Sidebar() {
           Bridge Crew
         </p>
         <div className="space-y-3">
-          {ACTIVE_CREW.map((member) => (
+          {ACTIVE_CREW.map((member) => {
+              const dc = DIVISION_COLORS[member.division];
+              return (
             <div key={member.id} className="flex items-center gap-3">
               <div className="relative shrink-0">
-                <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-lcars-amber/40">
+                <div
+                  className="w-9 h-9 rounded-full overflow-hidden"
+                  style={{ outline: `2px solid ${dc.ring}`, outlineOffset: '1px' }}
+                >
                   <img
                     src={publicUrl(member.photo)}
                     alt={member.name}
@@ -150,12 +155,13 @@ export default function Sidebar() {
                 <div className="text-xs font-medium text-lcars-text truncate">
                   {member.name}
                 </div>
-                <div className="text-[10px] text-lcars-muted font-mono truncate">
+                <div className="text-[10px] font-mono truncate" style={{ color: dc.color }}>
                   {member.rank} · {member.role}
                 </div>
               </div>
             </div>
-          ))}
+              );
+            })}
         </div>
       </div>
 

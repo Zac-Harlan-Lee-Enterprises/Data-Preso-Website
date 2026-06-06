@@ -6,7 +6,15 @@ export interface CrewMember {
   photo: string;
   strategicDomain: string;
   bio: string;
+  division: 'command' | 'operations' | 'sciences';
 }
+
+// TNG uniform division colors
+export const DIVISION_COLORS: Record<CrewMember['division'], { color: string; glow: string; ring: string }> = {
+  command:    { color: '#cc3333', glow: 'rgba(204,51,51,0.35)',    ring: 'rgba(204,51,51,0.5)'  },
+  operations: { color: '#c9a227', glow: 'rgba(201,162,39,0.35)',   ring: 'rgba(201,162,39,0.5)' },
+  sciences:   { color: '#3a82c4', glow: 'rgba(58,130,196,0.35)',   ring: 'rgba(58,130,196,0.5)' },
+};
 
 export const ACTIVE_CREW: CrewMember[] = [
   {
@@ -17,6 +25,7 @@ export const ACTIVE_CREW: CrewMember[] = [
     photo: "/crew/VirginiaFletcher.jpg",
     strategicDomain: "Executive AI & Data Strategy",
     bio: "Commanding the USS Lee Enterprise's mission to transform fragmented data assets into a trusted enterprise intelligence platform.",
+    division: "command",
   },
   {
     id: "harlan",
@@ -26,6 +35,7 @@ export const ACTIVE_CREW: CrewMember[] = [
     photo: "/crew/ZacHarlan.jpeg",
     strategicDomain: "Platform Architecture & Delivery",
     bio: "Overseeing the design and implementation of Lee's medallion architecture, ensuring the platform is built to scale across all 77+ properties.",
+    division: "command",
   },
   {
     id: "turner",
@@ -35,6 +45,7 @@ export const ACTIVE_CREW: CrewMember[] = [
     photo: "/crew/JonathanTurner.jpg",
     strategicDomain: "Operational Excellence & Delivery",
     bio: "Coordinating mission-critical operations across the bridge, ensuring all ship systems remain aligned with strategic objectives.",
+    division: "operations",
   },
   {
     id: "hadley",
@@ -44,6 +55,7 @@ export const ACTIVE_CREW: CrewMember[] = [
     photo: "/crew/MattHadley.jpg",
     strategicDomain: "Enterprise Data Strategy",
     bio: "Leading the scientific analysis of Lee's data landscape and charting the course toward a fully governed, AI-ready data estate.",
+    division: "sciences",
   },
   {
     id: "acker",
@@ -53,6 +65,7 @@ export const ACTIVE_CREW: CrewMember[] = [
     photo: "/crew/SheilaAcker.jpg",
     strategicDomain: "Core Infrastructure & Reliability",
     bio: "Maintaining the warp core — the medallion data pipeline — at peak efficiency, keeping data flowing from raw ingestion to AI-ready gold.",
+    division: "operations",
   },
   {
     id: "markendorf",
@@ -62,6 +75,7 @@ export const ACTIVE_CREW: CrewMember[] = [
     photo: "/crew/StaceyMarkendorf.jpg",
     strategicDomain: "Data Intelligence & Analytics",
     bio: "Scanning the data frontier for intelligence signals, translating raw findings into actionable insights for command.",
+    division: "sciences",
   },
   {
     id: "mueller",
@@ -71,5 +85,6 @@ export const ACTIVE_CREW: CrewMember[] = [
     photo: "/crew/KenMueller.png",
     strategicDomain: "Systems Integration & Connectivity",
     bio: "Ensuring reliable transport of data across all 77+ source systems, acquisition targets, and downstream consumers without signal loss.",
+    division: "operations",
   },
 ];
