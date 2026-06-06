@@ -1,3 +1,5 @@
+import { CREW_CONFIG } from './mission-config';
+
 export interface CrewMember {
   id: string;
   name: string;
@@ -16,7 +18,7 @@ export const DIVISION_COLORS: Record<CrewMember['division'], { color: string; gl
   sciences:   { color: '#3a82c4', glow: 'rgba(58,130,196,0.35)',   ring: 'rgba(58,130,196,0.5)' },
 };
 
-export const ACTIVE_CREW: CrewMember[] = [
+const BASE_CREW: CrewMember[] = [
   {
     id: "fletcher",
     name: "Virginia Fletcher",
@@ -88,3 +90,9 @@ export const ACTIVE_CREW: CrewMember[] = [
     division: "operations",
   },
 ];
+
+// Merge config overrides so rank/role/strategicDomain can be edited in mission-config.ts
+export const ACTIVE_CREW: CrewMember[] = BASE_CREW.map((member) => ({
+  ...member,
+  ...(CREW_CONFIG[member.id] ?? {}),
+}));

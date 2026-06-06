@@ -49,3 +49,47 @@ export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progre
   { text: 'Activate AI/Semantic Layer',              status: 'in-progress'  },
   { text: 'Prepare Agentic AI Foundation',           status: 'pending'      },
 ];
+
+// ── Bridge Crew ───────────────────────────────────────────────────────────────
+// Tweak titles, roles, and the small domain tag shown on each crew card.
+// 'rank'           — large label above the name (e.g. "Captain")
+// 'role'           — subtitle under the name (e.g. "Chief Information Officer")
+// 'strategicDomain'— small dim tag at the bottom of the card
+
+export const CREW_CONFIG: Record<string, { rank: string; role: string; strategicDomain: string }> = {
+  fletcher: {
+    rank:             'Captain',
+    role:             'Chief Information Officer',
+    strategicDomain:  'Executive AI & Data Strategy',
+  },
+  harlan: {
+    rank:             'First Officer',
+    role:             'Platform Architecture',
+    strategicDomain:  'Platform Architecture & Delivery',
+  },
+  turner: {
+    rank:             'Chief Operations Officer',
+    role:             'Bridge Operations Lead',
+    strategicDomain:  'Operational Excellence & Delivery',
+  },
+  hadley: {
+    rank:             'Chief Science Officer',
+    role:             'Enterprise Data Strategy Lead',
+    strategicDomain:  'Enterprise Data Strategy',
+  },
+  acker: {
+    rank:             'Chief Engineer',
+    role:             'Warp Core Systems',
+    strategicDomain:  'Core Infrastructure & Reliability',
+  },
+  markendorf: {
+    rank:             'Science Officer',
+    role:             'Data Intelligence & Reconnaissance',
+    strategicDomain:  'Data Intelligence & Analytics',
+  },
+  mueller: {
+    rank:             'Transporter Chief',
+    role:             'Platform Integration Engineer',
+    strategicDomain:  'Systems Integration & Connectivity',
+  },
+};
