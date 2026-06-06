@@ -155,7 +155,7 @@ export default function Sidebar() {
                 <div className="text-xs font-medium text-lcars-text truncate">
                   {member.name}
                 </div>
-                <div className="text-[10px] font-mono truncate" style={{ color: dc.color }}>
+                <div className="text-[10px] text-lcars-muted font-mono truncate">
                   {member.rank} · {member.role}
                 </div>
               </div>

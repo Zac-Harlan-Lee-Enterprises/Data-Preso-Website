@@ -19,8 +19,7 @@ export default function CrewRoster() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.12 }}
-            className="glass rounded-xl p-4 flex flex-col items-center text-center gap-3 cursor-default transition-colors"
-            style={{ borderColor: 'transparent' }}
+            className="glass rounded-xl p-4 flex flex-col items-center text-center gap-3 cursor-default transition-colors hover:border-lcars-amber/30"
           >
             <div
               className="relative w-20 h-20 rounded-full overflow-hidden"
@@ -37,8 +36,7 @@ export default function CrewRoster() {
               />
             </div>
             <div>
-              <div className="font-mono text-[9px] tracking-[0.15em] uppercase mb-1"
-                style={{ color: dc.color }}>
+              <div className="font-mono text-[9px] tracking-[0.15em] uppercase mb-1 text-lcars-muted">
                 {member.rank}
               </div>
               <div className="font-semibold text-lcars-text text-sm">{member.name}</div>
