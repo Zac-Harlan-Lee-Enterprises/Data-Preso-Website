@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Check, ChevronRight, RotateCcw } from 'lucide-react';
 import { ACQUISITION_STEPS } from '@/data/acquisition-steps';
@@ -13,31 +13,14 @@ interface Props {
 export default function MedallionFlow({ companyName, onReset }: Props) {
   const [activeStep, setActiveStep] = useState(0);
   const [completedSteps, setCompletedSteps] = useState<number[]>([]);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const [done, setDone] = useState(false);
 
-  useEffect(() => {
-    if (!isAutoPlaying || done) return;
-    if (activeStep >= ACQUISITION_STEPS.length) {
-      setDone(true);
-      return;
-    }
-    const timer = setTimeout(() => {
-      setCompletedSteps((prev) => [...prev, activeStep]);
-      setActiveStep((s) => s + 1);
-    }, 2400);
-    return () => clearTimeout(timer);
-  }, [activeStep, isAutoPlaying, done]);
-
-  const step = ACQUISITION_STEPS[activeStep] ?? ACQUISITION_STEPS[ACQUISITION_STEPS.length - 1];
-  const currentStepData = ACQUISITION_STEPS[Math.min(activeStep, ACQUISITION_STEPS.length - 1)];
-
   function handleNext() {
-    setIsAutoPlaying(false);
     if (activeStep < ACQUISITION_STEPS.length) {
       setCompletedSteps((prev) => [...prev, activeStep]);
-      setActiveStep((s) => s + 1);
-      if (activeStep + 1 >= ACQUISITION_STEPS.length) setDone(true);
+      const next = activeStep + 1;
+      setActiveStep(next);
+      if (next >= ACQUISITION_STEPS.length) setDone(true);
     }
   }
 
@@ -82,7 +65,6 @@ export default function MedallionFlow({ companyName, onReset }: Props) {
                 <button
                   key={s.id}
                   onClick={() => {
-                    setIsAutoPlaying(false);
                     setActiveStep(i);
                   }}
                   className="w-full text-left flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200"
