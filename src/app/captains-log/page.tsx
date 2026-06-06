@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const INTERACTIONS = [
   {
     question: "How are our subscription trends trending against Q3 projections across all markets?",
-    answer: "Captain Fletcher, digital subscriptions are up 14.2% versus Q3 projections across 61 markets. The strongest performers are Phoenix (+28%), Denver (+22%), and Austin (+19%). Three markets are below projection — all recently acquired properties now showing recovery curves consistent with canonical model stabilization.",
+    answer: "Admiral Fletcher, digital subscriptions are up 14.2% versus Q3 projections across 61 markets. The strongest performers are Phoenix (+28%), Denver (+22%), and Austin (+19%). Three markets are below projection — all recently acquired properties now showing recovery curves consistent with canonical model stabilization.",
     metrics: ['14.2% above projection', '61 / 77 markets tracked', '3 markets in recovery'],
     color: '#0ea5e9',
   },
@@ -170,7 +170,7 @@ export default function CaptainsLogPage() {
                       style={{ backgroundColor: interaction.color }}
                     />
                     <span className="font-mono text-[9px] text-lcars-dim tracking-wider">
-                      CAPTAIN FLETCHER · TEAMS
+                      ADM. FLETCHER · STARFLEET COMMAND
                     </span>
                   </div>
                   <p className="text-sm text-lcars-text">"{interaction.question}"</p>

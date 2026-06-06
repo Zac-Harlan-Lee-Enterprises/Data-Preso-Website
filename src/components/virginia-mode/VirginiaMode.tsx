@@ -21,11 +21,11 @@ const STEPS: Step[] = [
   {
     id: 'welcome',
     headline: 'WELCOME ABOARD THE USS LEE ENTERPRISE',
-    subheadline: 'CAPTAIN FLETCHER',
+    subheadline: 'ADMIRAL FLETCHER — STARFLEET COMMAND',
     body: 'All systems are online. Current mission: establishing the data and AI foundation that will define Lee Enterprises for the next decade. Your command awaits.',
     visual: 'captain',
     accent: '#f59e0b',
-    computerVoice: 'Welcome aboard the USS Lee Enterprise, Captain Fletcher. Current mission: establishing the foundation for Lee\'s AI-enabled future. All systems nominal.',
+    computerVoice: 'Welcome aboard the USS Lee Enterprise, Admiral Fletcher. Current mission: establishing the foundation for Lee\'s AI-enabled future. All systems nominal.',
   },
   {
     id: 'mission',
@@ -82,7 +82,7 @@ const STEPS: Step[] = [
     body: 'Every system is online. The USS Lee Enterprise is ready for your command. Explore the architecture, run the acquisition simulator, or ask the Computer any strategic question.',
     visual: 'handoff',
     accent: '#f59e0b',
-    computerVoice: 'All systems standing by, Captain Fletcher. Awaiting your command. The bridge is yours.',
+    computerVoice: 'All systems standing by, Admiral Fletcher. Awaiting your command. The bridge is yours.',
     navigateTo: '/',
   },
 ];
@@ -110,14 +110,14 @@ function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
           <div className="absolute inset-1 rounded-full overflow-hidden">
             <img
               src={publicUrl("/crew/VirginiaFletcher.jpg")}
-              alt="Captain Virginia Fletcher"
+              alt="Virginia Fletcher — Starfleet Command"
               className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
         <div className="text-center">
           <div className="font-mono text-sm tracking-widest" style={{ color: step.accent }}>
-            CAPTAIN VIRGINIA FLETCHER
+            VIRGINIA FLETCHER — STARFLEET COMMAND
           </div>
           <div className="font-mono text-xs text-lcars-muted mt-1 tracking-wider">
             CHIEF INFORMATION OFFICER
