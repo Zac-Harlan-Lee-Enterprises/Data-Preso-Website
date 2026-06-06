@@ -1,3 +1,5 @@
+import { READINESS_VALUES } from './mission-config';
+
 export interface ReadinessIndicator {
   id: string;
   label: string;
@@ -14,7 +16,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
   {
     id: "data-standardization",
     label: "Data Standardization",
-    value: 72,
+    value: READINESS_VALUES.dataStandardization,
     color: "#f59e0b",
     icon: "Database",
     currentState:
@@ -29,7 +31,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
   {
     id: "ai-readiness",
     label: "AI Readiness",
-    value: 45,
+    value: READINESS_VALUES.aiReadiness,
     color: "#0ea5e9",
     icon: "Brain",
     currentState:
@@ -44,7 +46,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
   {
     id: "governance-maturity",
     label: "Governance Maturity",
-    value: 60,
+    value: READINESS_VALUES.governanceMaturity,
     color: "#10b981",
     icon: "Shield",
     currentState:
@@ -59,7 +61,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
   {
     id: "acquisition-scalability",
     label: "Acquisition Scalability",
-    value: 55,
+    value: READINESS_VALUES.acquisitionScalability,
     color: "#f97316",
     icon: "GitMerge",
     currentState:
@@ -74,7 +76,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
   {
     id: "operational-self-service",
     label: "Operational Self-Service",
-    value: 38,
+    value: READINESS_VALUES.operationalSelfService,
     color: "#8b5cf6",
     icon: "Users",
     currentState:

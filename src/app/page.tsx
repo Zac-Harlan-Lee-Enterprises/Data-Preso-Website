@@ -6,6 +6,7 @@ import ObjectivesList from '@/components/bridge/ObjectivesList';
 import ReadinessIndicators from '@/components/bridge/ReadinessIndicators';
 import RoadmapTimeline from '@/components/bridge/RoadmapTimeline';
 import CrewRoster from '@/components/bridge/CrewRoster';
+import { MISSION_PROGRESS } from '@/data/mission-config';
 
 export default function BridgePage() {
   return (
@@ -36,7 +37,7 @@ export default function BridgePage() {
       {/* Primary row: Mission Status + Objectives */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-          <MissionStatus progress={78} />
+          <MissionStatus progress={MISSION_PROGRESS} />
         </motion.div>
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
           <ObjectivesList />
