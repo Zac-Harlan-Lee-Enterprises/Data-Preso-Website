@@ -1,0 +1,93 @@
+[
+  {
+    "id": "bridge-overview",
+    "category": "functional",
+    "description": "Bridge Overview: mission status radial progress, objectives checklist, readiness indicators with slide-in detail panels, roadmap timeline, crew roster",
+    "verification": "Navigate to http://localhost:3000 — see 78% radial progress, 5 clickable readiness indicators that open slide panels, 3-phase roadmap accordion, Virginia + Zac crew cards",
+    "passes": false
+  },
+  {
+    "id": "virginia-mode",
+    "category": "functional",
+    "description": "Virginia Mode: 7-step cinematic tour triggered by 'Begin Tour' button in sidebar",
+    "verification": "Click 'Begin Tour' in sidebar — full-screen overlay with 7 steps, typewriter Computer voice, visual elements, auto-advances every 14s, skip/next controls work",
+    "passes": false
+  },
+  {
+    "id": "main-engineering-flow",
+    "category": "functional",
+    "description": "Main Engineering: React Flow diagram with 10 ship system nodes, 3 flow overlays",
+    "verification": "Navigate to /engineering — see 10 labeled nodes, click 'BI Dashboard' / 'Direct SQL' / 'Conversational AI' buttons to highlight and animate relevant edges with traveling particles",
+    "passes": false
+  },
+  {
+    "id": "system-panel",
+    "category": "functional",
+    "description": "Main Engineering: clicking a node opens 7-tab system detail panel",
+    "verification": "Click any node (e.g. Warp Core) — right panel slides in with Overview, Responsibilities, Current State, Future State, Business Value, Dependencies, Strategic Importance tabs",
+    "passes": false
+  },
+  {
+    "id": "acquisition-simulator",
+    "category": "functional",
+    "description": "Acquisition Simulator: 7-step auto-playing integration animation with company name input",
+    "verification": "Navigate to /acquisition — enter company name, click Begin — 7 steps auto-play, left list shows progress, right shows detail, final screen shows 9-12mo vs 4-8wk comparison + 5 benefits",
+    "passes": false
+  },
+  {
+    "id": "computer-qa",
+    "category": "functional",
+    "description": "Computer Interface: pre-programmed Q&A with keyword matching, suggested questions, structured 6-section response",
+    "verification": "Navigate to /computer — click a suggested question or type 'Computer, why do canonical models matter?' — see 6-section structured response with typewriter-style appearance",
+    "passes": false
+  },
+  {
+    "id": "computer-live-ai",
+    "category": "functional",
+    "description": "Computer Interface: optional live Anthropic API key for open-ended questions",
+    "verification": "Click 'Live AI (Optional)' — enter a valid Anthropic API key — ask a custom question — response comes from Claude, not pre-programmed Q&A",
+    "passes": false
+  },
+  {
+    "id": "captains-log",
+    "category": "functional",
+    "description": "Captain's Log: stardate 2028 narrative, 4 AI interaction demos, 3 agentic workflow cards",
+    "verification": "Navigate to /captains-log — see star field header, narrative text, 4 color-coded interaction cards, 3 agentic workflow cards, aspirational closing statement",
+    "passes": false
+  },
+  {
+    "id": "sidebar-navigation",
+    "category": "visual",
+    "description": "Sidebar: persistent LCARS navigation with active state, crew avatars, stardate",
+    "verification": "Sidebar always visible — active module highlighted in cyan — Virginia + Zac photo avatars with green 'online' dots — rolling stardate in header",
+    "passes": false
+  },
+  {
+    "id": "status-bar",
+    "category": "visual",
+    "description": "Status bar: scrolling telemetry ticker, live clock, system status dots",
+    "verification": "Bottom bar shows 4 system status indicators, scrolling ticker with platform status messages, live HH:MM:SS clock updating every second",
+    "passes": false
+  },
+  {
+    "id": "github-pages-build",
+    "category": "functional",
+    "description": "Static export: npm run build produces out/ directory for GitHub Pages deployment",
+    "verification": "Run 'npm run build' — succeeds with no errors — out/ directory contains index.html, engineering/, acquisition/, computer/, captains-log/ with index.html in each",
+    "passes": false
+  },
+  {
+    "id": "github-actions-deploy",
+    "category": "functional",
+    "description": "GitHub Actions workflow: .github/workflows/deploy.yml deploys to gh-pages branch",
+    "verification": "Push to main branch of a GitHub repo with Pages enabled — Actions tab shows deploy workflow running — site live at https://username.github.io/repo-name/",
+    "passes": false
+  },
+  {
+    "id": "tests-pass",
+    "category": "functional",
+    "description": "All Vitest tests pass: architecture imports, computer-qa integrity, architecture-nodes integrity",
+    "verification": "Run 'npm test' — all suites pass with 0 failures",
+    "passes": false
+  }
+]

@@ -1,0 +1,63 @@
+SESSION: 2026-06-06 — Initial Implementation
+
+## What was built
+
+Full application scaffolded from scratch:
+
+### Config & tooling
+- package.json (Next.js 15, React 19, Framer Motion, @xyflow/react, Lucide, Tailwind v3, Vitest)
+- next.config.ts — static export for GitHub Pages, basePath via NEXT_PUBLIC_BASE_PATH env var
+- tailwind.config.ts — LCARS color palette (lcars-bg, lcars-amber, lcars-cyan, etc.)
+- vitest.config.ts — jsdom environment, @/ alias, setup file
+- .github/workflows/deploy.yml — GitHub Actions → gh-pages deploy
+
+### Application structure (src/)
+- app/layout.tsx — IBM Plex Mono + Inter fonts via next/font/google, AppProvider + AppShell
+- app/page.tsx — Bridge Overview (root, serves as home)
+- app/engineering/page.tsx — Main Engineering with dynamic React Flow import (ssr: false)
+- app/acquisition/page.tsx — Acquisition Simulator
+- app/computer/page.tsx — Computer Interface
+- app/captains-log/page.tsx — Captain's Log with star field
+
+### Key data files
+- data/computer-qa.ts — 18 Q&A entries + matchQuestion() keyword matching function
+- data/architecture-nodes.ts — 10 ship system nodes + 11 edges for React Flow
+- data/readiness-indicators.ts — 5 strategic readiness indicators with full detail content
+- data/acquisition-steps.ts — 7 medallion integration steps
+- data/roadmap.ts — 3-phase roadmap
+- data/crew.ts — Virginia Fletcher + Zac Harlan
+
+### Components
+- layout/AppShell.tsx, Sidebar.tsx, StatusBar.tsx
+- virginia-mode/VirginiaMode.tsx — 7-step cinematic tour
+- bridge/ — MissionStatus, ObjectivesList, ReadinessIndicators, RoadmapTimeline, CrewRoster
+- engineering/ — FlowNodes, ArchitectureFlow, SystemPanel
+- acquisition/ — SimulatorTrigger, MedallionFlow (with embedded ComparisonPanel)
+- computer/ — ComputerTerminal, ResponseDisplay
+- contexts/AppContext.tsx — virginiaModeActive state + startVirginiaTour/closeVirginiaTour
+
+### Tests (Vitest)
+- tests/architecture/imports.test.ts — no cross-layer imports, no debug artifacts
+- tests/data/computer-qa.test.ts — Q&A integrity + matchQuestion() behavior
+- tests/data/architecture-nodes.test.ts — node/edge integrity + flow validation
+
+### Harness
+- init.sh, agent-status.sh, quality-sweep.sh, AGENTS.md, feature_list.json
+
+## Next session should
+1. Run `bash init.sh` to install and start the dev server
+2. Run `npm test` to verify all tests pass
+3. Run `npm run build` to verify static export works
+4. Check crew photos are in public/crew/ (copied by init.sh from crew-pictures/)
+5. Verify Virginia Mode renders correctly — 7 steps with typewriter text
+6. Verify React Flow engineering diagram with 3 flow overlays
+7. Set NEXT_PUBLIC_BASE_PATH to your repo name for GitHub Pages deployment
+8. Create GitHub repo, push, enable Pages with GitHub Actions source
+
+## Key decisions
+- Tailwind v3 (not v4) — reliability, shadcn compatibility
+- basePath configurable via env (no hardcoded repo name)
+- Computer live AI = Anthropic claude-haiku-4-5 (browser-side fetch, user provides key)
+- Virginia Mode = manual trigger ("Begin Tour" button in sidebar), not auto-play
+- React Flow dynamically imported (ssr: false) to avoid SSR issues
+- Only Virginia Fletcher + Zac Harlan shown in UI (other crew photos in project but unused)
