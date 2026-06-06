@@ -26,6 +26,10 @@ export default function MedallionFlow({ companyName, onReset }: Props) {
 
   const displayStep = ACQUISITION_STEPS[Math.min(activeStep, ACQUISITION_STEPS.length - 1)];
 
+  function interpolate(text: string) {
+    return text.replaceAll('{{company}}', companyName);
+  }
+
   return (
     <div className="flex flex-col h-full overflow-hidden">
       {/* Company header */}
@@ -139,14 +143,14 @@ export default function MedallionFlow({ companyName, onReset }: Props) {
                   </div>
                 </div>
 
-                <p className="text-lcars-muted leading-relaxed">{displayStep.description}</p>
+                <p className="text-lcars-muted leading-relaxed">{interpolate(displayStep.description)}</p>
 
                 <div className="glass rounded-xl p-4 lcars-bar-cyan">
                   <div className="font-mono text-[9px] tracking-[0.2em] text-lcars-muted uppercase mb-2">
                     Technical Detail
                   </div>
                   <p className="font-mono text-xs text-lcars-muted leading-relaxed">
-                    {displayStep.technicalDetail}
+                    {interpolate(displayStep.technicalDetail)}
                   </p>
                 </div>
 
