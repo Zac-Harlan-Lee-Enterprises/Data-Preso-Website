@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import Image from 'next/image';
 import {
   LayoutDashboard,
   Cpu,
@@ -13,7 +12,7 @@ import {
 } from 'lucide-react';
 import { useApp } from '@/contexts/AppContext';
 import { ACTIVE_CREW } from '@/data/crew';
-import { cn } from '@/lib/utils';
+import { cn, publicUrl } from '@/lib/utils';
 
 const NAV_ITEMS = [
   { href: '/', label: 'Bridge Overview', icon: LayoutDashboard, description: 'Mission status & readiness' },
@@ -139,11 +138,9 @@ export default function Sidebar() {
             <div key={member.id} className="flex items-center gap-3">
               <div className="relative shrink-0">
                 <div className="w-9 h-9 rounded-full overflow-hidden ring-2 ring-lcars-amber/40">
-                  <Image
-                    src={member.photo}
+                  <img
+                    src={publicUrl(member.photo)}
                     alt={member.name}
-                    width={36}
-                    height={36}
                     className="object-cover w-full h-full"
                   />
                 </div>

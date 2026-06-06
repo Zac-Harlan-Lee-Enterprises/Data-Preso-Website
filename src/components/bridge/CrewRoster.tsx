@@ -1,8 +1,8 @@
 'use client';
 
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ACTIVE_CREW } from '@/data/crew';
+import { publicUrl } from '@/lib/utils';
 
 export default function CrewRoster() {
   return (
@@ -27,11 +27,10 @@ export default function CrewRoster() {
                 boxShadow: `0 0 20px ${i === 0 ? 'rgba(245,158,11,0.3)' : 'rgba(14,165,233,0.3)'}`,
               }}
             >
-              <Image
-                src={member.photo}
+              <img
+                src={publicUrl(member.photo)}
                 alt={member.name}
-                fill
-                className="object-cover"
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <div>

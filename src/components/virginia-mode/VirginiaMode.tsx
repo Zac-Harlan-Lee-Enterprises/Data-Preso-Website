@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Image from 'next/image';
 import { X, ChevronRight, SkipForward } from 'lucide-react';
 import { useRouter } from 'next/navigation';
+import { publicUrl } from '@/lib/utils';
 
 interface Step {
   id: string;
@@ -108,11 +108,10 @@ function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
             }}
           />
           <div className="absolute inset-1 rounded-full overflow-hidden">
-            <Image
-              src="/crew/VirginiaFletcher.jpg"
+            <img
+              src={publicUrl("/crew/VirginiaFletcher.jpg")}
               alt="Captain Virginia Fletcher"
-              fill
-              className="object-cover"
+              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         </div>
