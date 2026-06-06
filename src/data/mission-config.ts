@@ -32,3 +32,20 @@ export const READINESS_VALUES = {
   /** Business users able to self-serve without engineering tickets */
   operationalSelfService: 38,
 } as const;
+
+// ── Mission Objectives ───────────────────────────────────────────────────────
+// status options:
+//   'complete'    — green check, full-brightness text
+//   'in-progress' — amber check, muted text, "IN PROGRESS" badge
+//   'pending'     — dim check, dim text, "PENDING" badge
+
+export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progress' | 'pending' }[] = [
+  { text: 'Establish Canonical Subscriber Models',    status: 'complete'     },
+  { text: 'Build Medallion Architecture (5 Layers)', status: 'complete'     },
+  { text: 'Deploy dbt Transformation Governance',    status: 'complete'     },
+  { text: 'Govern Enterprise Data with Dataplex',    status: 'complete'     },
+  { text: 'Validate Acquisition Onboarding Pattern', status: 'complete'     },
+  { text: 'Enable Conversational Analytics (Teams)', status: 'in-progress'  },
+  { text: 'Activate AI/Semantic Layer',              status: 'in-progress'  },
+  { text: 'Prepare Agentic AI Foundation',           status: 'pending'      },
+];

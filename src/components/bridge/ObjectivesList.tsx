@@ -2,17 +2,13 @@
 
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import { MISSION_OBJECTIVES } from '@/data/mission-config';
 
-const OBJECTIVES = [
-  { text: 'Establish Canonical Subscriber Models', done: true },
-  { text: 'Build Medallion Architecture (5 Layers)', done: true },
-  { text: 'Deploy dbt Transformation Governance', done: true },
-  { text: 'Govern Enterprise Data with Dataplex', done: true },
-  { text: 'Enable Conversational Analytics (Teams)', done: false },
-  { text: 'Validate Acquisition Onboarding Pattern', done: true },
-  { text: 'Activate AI/Semantic Layer', done: false },
-  { text: 'Prepare Agentic AI Foundation', done: false },
-];
+const STATUS_STYLES = {
+  complete:    { icon: 'text-lcars-green',  text: 'text-lcars-text',  badge: null,            strokeWidth: 2   },
+  'in-progress': { icon: 'text-lcars-amber', text: 'text-lcars-muted', badge: 'IN PROGRESS',  strokeWidth: 2   },
+  pending:     { icon: 'text-lcars-dim',    text: 'text-lcars-dim',   badge: 'PENDING',       strokeWidth: 1.5 },
+};
 
 export default function ObjectivesList() {
   return (
@@ -21,33 +17,32 @@ export default function ObjectivesList() {
         Mission Objectives
       </div>
       <div className="space-y-2.5">
-        {OBJECTIVES.map((obj, i) => (
-          <motion.div
-            key={obj.text}
-            initial={{ opacity: 0, x: -12 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.1 + i * 0.08 }}
-            className="flex items-center gap-3"
-          >
-            <CheckCircle2
-              size={16}
-              className={obj.done ? 'text-lcars-green shrink-0' : 'text-lcars-dim shrink-0'}
-              strokeWidth={obj.done ? 2 : 1.5}
-            />
-            <span
-              className={`text-sm font-medium ${
-                obj.done ? 'text-lcars-text' : 'text-lcars-muted'
-              }`}
+        {MISSION_OBJECTIVES.map((obj, i) => {
+          const s = STATUS_STYLES[obj.status];
+          return (
+            <motion.div
+              key={obj.text}
+              initial={{ opacity: 0, x: -12 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.1 + i * 0.08 }}
+              className="flex items-center gap-3"
             >
-              {obj.text}
-            </span>
-            {!obj.done && (
-              <span className="ml-auto font-mono text-[9px] text-lcars-muted tracking-wider shrink-0">
-                IN PROGRESS
+              <CheckCircle2
+                size={16}
+                className={`${s.icon} shrink-0`}
+                strokeWidth={s.strokeWidth}
+              />
+              <span className={`text-sm font-medium ${s.text}`}>
+                {obj.text}
               </span>
-            )}
-          </motion.div>
-        ))}
+              {s.badge && (
+                <span className="ml-auto font-mono text-[9px] text-lcars-muted tracking-wider shrink-0">
+                  {s.badge}
+                </span>
+              )}
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
