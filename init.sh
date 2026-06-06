@@ -27,6 +27,10 @@ cp crew-pictures/SheilaAcker.jpg       public/crew/ 2>/dev/null || echo "  ⚠ S
 cp crew-pictures/StaceyMarkendorf.jpg  public/crew/ 2>/dev/null || echo "  ⚠ StaceyMarkendorf.jpg not found in crew-pictures/"
 cp crew-pictures/KenMueller.png        public/crew/ 2>/dev/null || echo "  ⚠ KenMueller.png not found in crew-pictures/"
 
+# Copy source documents
+cp "Lee AI Platform Proposal.pdf"  public/lee-ai-platform-proposal.pdf  2>/dev/null || echo "  ⚠ Lee AI Platform Proposal.pdf not found"
+cp "Data & AI Architecture.pdf"    public/data-ai-architecture.pdf      2>/dev/null || echo "  ⚠ Data & AI Architecture.pdf not found"
+
 # Add .nojekyll for GitHub Pages
 touch public/.nojekyll
 

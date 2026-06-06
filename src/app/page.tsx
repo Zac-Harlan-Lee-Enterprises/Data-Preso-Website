@@ -6,6 +6,7 @@ import ObjectivesList from '@/components/bridge/ObjectivesList';
 import ReadinessIndicators from '@/components/bridge/ReadinessIndicators';
 import RoadmapTimeline from '@/components/bridge/RoadmapTimeline';
 import CrewRoster from '@/components/bridge/CrewRoster';
+import ShipsLibrary from '@/components/bridge/ShipsLibrary';
 import { MISSION_PROGRESS } from '@/data/mission-config';
 
 export default function BridgePage() {
@@ -50,7 +51,7 @@ export default function BridgePage() {
       </motion.div>
 
       {/* Roadmap + Crew */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pb-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}>
           <RoadmapTimeline />
         </motion.div>
@@ -58,6 +59,11 @@ export default function BridgePage() {
           <CrewRoster />
         </motion.div>
       </div>
+
+      {/* Ship's Library */}
+      <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35 }} className="pb-6">
+        <ShipsLibrary />
+      </motion.div>
     </div>
   );
 }
