@@ -21,6 +21,11 @@ echo "→ Copying crew assets..."
 mkdir -p public/crew
 cp crew-pictures/VirginiaFletcher.jpg  public/crew/ 2>/dev/null || echo "  ⚠ VirginiaFletcher.jpg not found in crew-pictures/"
 cp crew-pictures/ZacHarlan.jpeg        public/crew/ 2>/dev/null || echo "  ⚠ ZacHarlan.jpeg not found in crew-pictures/"
+cp crew-pictures/JonathanTurner.jpg    public/crew/ 2>/dev/null || echo "  ⚠ JonathanTurner.jpg not found in crew-pictures/"
+cp crew-pictures/MattHadley.jpg        public/crew/ 2>/dev/null || echo "  ⚠ MattHadley.jpg not found in crew-pictures/"
+cp crew-pictures/SheilaAcker.jpg       public/crew/ 2>/dev/null || echo "  ⚠ SheilaAcker.jpg not found in crew-pictures/"
+cp crew-pictures/StaceyMarkendorf.jpg  public/crew/ 2>/dev/null || echo "  ⚠ StaceyMarkendorf.jpg not found in crew-pictures/"
+cp crew-pictures/KenMueller.png        public/crew/ 2>/dev/null || echo "  ⚠ KenMueller.png not found in crew-pictures/"
 
 # Add .nojekyll for GitHub Pages
 touch public/.nojekyll

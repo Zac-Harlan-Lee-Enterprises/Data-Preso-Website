@@ -10,7 +10,7 @@ export default function CrewRoster() {
       <div className="font-mono text-[10px] tracking-[0.2em] text-lcars-muted uppercase mb-5">
         Bridge Crew
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-3 gap-4">
         {ACTIVE_CREW.map((member, i) => (
           <motion.div
             key={member.id}
