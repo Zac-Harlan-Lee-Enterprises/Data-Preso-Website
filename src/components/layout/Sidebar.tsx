@@ -13,6 +13,7 @@ import {
 import { useApp } from '@/contexts/AppContext';
 import { ACTIVE_CREW, DIVISION_COLORS } from '@/data/crew';
 import { cn, publicUrl } from '@/lib/utils';
+import { X } from 'lucide-react';
 
 const NAV_ITEMS = [
   { href: '/', label: 'Bridge Overview', icon: LayoutDashboard, description: 'Mission status & readiness' },
@@ -36,7 +37,7 @@ function Stardate() {
   );
 }
 
-export default function Sidebar() {
+export default function Sidebar({ onClose }: { onClose?: () => void }) {
   const pathname = usePathname();
   const { startVirginiaTour } = useApp();
 
@@ -46,22 +47,34 @@ export default function Sidebar() {
       <div className="h-1 w-full bg-gradient-to-r from-lcars-amber via-lcars-cyan to-lcars-violet" />
 
       {/* Header */}
-      <div className="px-5 pt-5 pb-4 border-b border-lcars-border/40">
-        <div className="flex items-center gap-2 mb-1">
-          <div className="w-2 h-2 rounded-full bg-lcars-cyan animate-pulse-slow" />
-          <span className="font-mono text-[10px] text-lcars-cyan tracking-[0.2em] uppercase">
-            NCC-2026-L
-          </span>
+      <div className="px-5 pt-5 pb-4 border-b border-lcars-border/40 flex items-start justify-between gap-2">
+        <div>
+          <div className="flex items-center gap-2 mb-1">
+            <div className="w-2 h-2 rounded-full bg-lcars-cyan animate-pulse-slow" />
+            <span className="font-mono text-[10px] text-lcars-cyan tracking-[0.2em] uppercase">
+              NCC-2026-L
+            </span>
+          </div>
+          <h1 className="font-mono text-sm font-semibold text-lcars-amber tracking-wide leading-tight">
+            USS LEE ENTERPRISE
+          </h1>
+          <p className="font-mono text-[9px] text-lcars-muted tracking-widest uppercase mt-1">
+            Data Modernization Command
+          </p>
+          <div className="mt-2">
+            <Stardate />
+          </div>
         </div>
-        <h1 className="font-mono text-sm font-semibold text-lcars-amber tracking-wide leading-tight">
-          USS LEE ENTERPRISE
-        </h1>
-        <p className="font-mono text-[9px] text-lcars-muted tracking-widest uppercase mt-1">
-          Data Modernization Command
-        </p>
-        <div className="mt-2">
-          <Stardate />
-        </div>
+        {/* Close button — mobile only */}
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="md:hidden p-1 rounded text-lcars-muted hover:text-lcars-text transition-colors shrink-0 mt-0.5"
+            aria-label="Close navigation"
+          >
+            <X size={16} />
+          </button>
+        )}
       </div>
 
       {/* Navigation */}
@@ -79,6 +92,7 @@ export default function Sidebar() {
             <Link
               key={item.href}
               href={item.href}
+              onClick={onClose}
               className={cn(
                 'flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all duration-200 group',
                 isActive
@@ -129,11 +143,11 @@ export default function Sidebar() {
       </div>
 
       {/* Crew section */}
-      <div className="px-4 pb-4 border-t border-lcars-border/40 pt-4">
+      <div className="px-4 pb-4 border-t border-lcars-border/40 pt-4 shrink-0">
         <p className="font-mono text-[9px] text-lcars-dim tracking-[0.2em] uppercase mb-3">
           Bridge Crew
         </p>
-        <div className="space-y-3">
+        <div className="space-y-3 overflow-y-auto max-h-48">
           {ACTIVE_CREW.map((member) => {
               const dc = DIVISION_COLORS[member.division];
               return (
