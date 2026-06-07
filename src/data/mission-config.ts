@@ -44,7 +44,7 @@ export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progre
   { text: 'Build Medallion Architecture (5 Layers)', status: 'complete'     },
   { text: 'Deploy dbt Transformation Governance',    status: 'complete'     },
   { text: 'Govern Enterprise Data with Dataplex',    status: 'complete'     },
-  { text: 'Validate Acquisition Onboarding Pattern', status: 'complete'     },
+  { text: 'Validate Acquisition Onboarding Pattern', status: 'in-progress' },
   { text: 'Enable Conversational Analytics (Teams)', status: 'in-progress'  },
   { text: 'Activate AI/Semantic Layer',              status: 'in-progress'  },
   { text: 'Prepare Agentic AI Foundation',           status: 'pending'      },
@@ -60,12 +60,12 @@ export const CREW_CONFIG: Record<string, { rank: string; role: string; strategic
   fletcher: {
     rank:             'Starfleet Command',
     role:             'Chief Information Officer',
-    strategicDomain:  'Executive AI & Data Strategy',
+    strategicDomain:  'Executive Command & Strategic Alignment',
   },
   harlan: {
     rank:             'Captain',
     role:             'Mission Commander & Platform Architect',
-    strategicDomain:  'Platform Architecture & Delivery',
+    strategicDomain:  'Mission Architecture & Future Systems',
   },
   turner: {
     rank:             'First Officer',
@@ -75,17 +75,17 @@ export const CREW_CONFIG: Record<string, { rank: string; role: string; strategic
   hadley: {
     rank:             'Chief Science Officer',
     role:             'Enterprise Data Strategy Lead',
-    strategicDomain:  'Enterprise Data Strategy',
+    strategicDomain:  'Data Intelligence & Knowledge Systems',
   },
   acker: {
     rank:             'Chief Engineer',
     role:             'Warp Core Systems',
-    strategicDomain:  'Core Infrastructure & Reliability',
+    strategicDomain:  'Core Systems Reliability & Performance',
   },
   markendorf: {
     rank:             'Data Intelligence Officer',
     role:             'Data Intelligence & Reconnaissance',
-    strategicDomain:  'Data Intelligence & Analytics',
+    strategicDomain:  'Data Intelligence & Automation',
   },
   mueller: {
     rank:             'Chief Integration Engineer',

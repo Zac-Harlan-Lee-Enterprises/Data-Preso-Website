@@ -67,6 +67,13 @@ describe('Architecture: import discipline', () => {
     expect(violations).toHaveLength(0);
   });
 
+  it('VirginiaMode does not auto-advance (no setTimeout goToNext)', () => {
+    const file = path.resolve(__dirname, '../../src/components/virginia-mode/VirginiaMode.tsx');
+    const content = fs.readFileSync(file, 'utf8');
+    // The auto-advance pattern was: setTimeout(goToNext, 14000)
+    expect(content).not.toMatch(/setTimeout\s*\(\s*goToNext/);
+  });
+
   it('no console.log or debugger in source files', () => {
     const violations: string[] = [];
     for (const file of listSourceFiles(ROOT)) {

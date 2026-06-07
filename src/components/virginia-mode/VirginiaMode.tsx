@@ -330,12 +330,6 @@ export default function VirginiaMode({ onClose }: Props) {
     }, 400);
   }, [isLast, step, router, onClose]);
 
-  // Auto-advance every 14s
-  useEffect(() => {
-    const timer = setTimeout(goToNext, 14000);
-    return () => clearTimeout(timer);
-  }, [currentStep, goToNext]);
-
   return (
     <div className="virginia-overlay flex flex-col">
       {/* Top accent bar */}
