@@ -23,7 +23,7 @@ const INTERACTIONS = [
   },
   {
     question: "Surface any underperforming markets that need executive attention.",
-    answer: "Proactive analysis complete, Captain. Three markets surfaced: Memphis (-8.2% digital subscriber growth vs cohort), Omaha (advertiser yield 22% below regional average), and Fresno (churn rate elevated 3.1 standard deviations above enterprise median). I've prepared briefing packets for each with root cause hypotheses and comparable market recovery patterns. Shall I route these to the relevant property leadership?",
+    answer: "Proactive analysis complete, Admiral. Three markets surfaced: Memphis (-8.2% digital subscriber growth vs cohort), Omaha (advertiser yield 22% below regional average), and Fresno (churn rate elevated 3.1 standard deviations above enterprise median). I've prepared briefing packets for each with root cause hypotheses and comparable market recovery patterns. Shall I route these to the relevant property leadership?",
     metrics: ['3 markets flagged', 'Root causes identified', 'Recovery patterns matched'],
     color: '#8b5cf6',
   },
@@ -55,22 +55,31 @@ export default function CaptainsLogPage() {
     <div className="min-h-full pb-12">
       {/* Cinematic header */}
       <div className="relative overflow-hidden">
-        {/* Star field */}
+        {/* Star field — deterministic values to avoid hydration mismatch */}
         <div className="absolute inset-0 overflow-hidden">
-          {Array.from({ length: 60 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white"
-              style={{
-                width: Math.random() * 2 + 1,
-                height: Math.random() * 2 + 1,
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                opacity: Math.random() * 0.7 + 0.1,
-                animation: `twinkle ${2 + Math.random() * 4}s ease-in-out ${Math.random() * 4}s infinite alternate`,
-              }}
-            />
-          ))}
+          {Array.from({ length: 60 }).map((_, i) => {
+            // Simple seeded pseudo-random using index
+            const s1 = ((i * 9301 + 49297) % 233280) / 233280;
+            const s2 = ((i * 6971 + 12345) % 233280) / 233280;
+            const s3 = ((i * 1234 + 56789) % 233280) / 233280;
+            const s4 = ((i * 4321 + 98765) % 233280) / 233280;
+            const s5 = ((i * 7777 + 11111) % 233280) / 233280;
+            const s6 = ((i * 3333 + 77777) % 233280) / 233280;
+            return (
+              <div
+                key={i}
+                className="absolute rounded-full bg-white"
+                style={{
+                  width: s1 * 2 + 1,
+                  height: s1 * 2 + 1,
+                  left: `${s2 * 100}%`,
+                  top: `${s3 * 100}%`,
+                  opacity: s4 * 0.7 + 0.1,
+                  animation: `twinkle ${2 + s5 * 4}s ease-in-out ${s6 * 4}s infinite alternate`,
+                }}
+              />
+            );
+          })}
         </div>
 
         <div className="relative px-8 py-14 text-center space-y-4">
