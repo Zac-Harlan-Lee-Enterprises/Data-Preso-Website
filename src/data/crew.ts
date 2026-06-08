@@ -47,7 +47,7 @@ const BASE_CREW: CrewMember[] = [
     photo: "/crew/JonathanTurner.jpg",
     strategicDomain: "Operational Excellence & Delivery",
     bio: "Coordinating mission-critical operations across the bridge, ensuring all ship systems remain aligned with strategic objectives.",
-    division: "operations",
+    division: "command",
   },
   {
     id: "hadley",
