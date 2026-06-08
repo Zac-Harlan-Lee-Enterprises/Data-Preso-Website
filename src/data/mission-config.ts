@@ -18,19 +18,19 @@ export const MISSION_PROGRESS = 78;
 
 export const READINESS_VALUES = {
   /** Canonical model coverage across Lee properties */
-  dataStandardization: 72,
+  dataStandardization: 20,
 
   /** AI/Semantic layer maturity and governed access paths */
-  aiReadiness: 45,
+  aiReadiness: 10,
 
   /** Dataplex governance, lineage, and access control maturity */
-  governanceMaturity: 60,
+  governanceMaturity: 15,
 
   /** Speed and repeatability of acquisition data integration */
-  acquisitionScalability: 55,
+  acquisitionScalability: 20,
 
   /** Business users able to self-serve without engineering tickets */
-  operationalSelfService: 38,
+  operationalSelfService: 5,
 } as const;
 
 // ── Mission Objectives ───────────────────────────────────────────────────────
@@ -41,9 +41,9 @@ export const READINESS_VALUES = {
 
 export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progress' | 'pending' }[] = [
   { text: 'Establish Canonical Subscriber Models',    status: 'complete'     },
-  { text: 'Build Medallion Architecture (5 Layers)', status: 'complete'     },
+  { text: 'Build Medallion Architecture (5 Layers)', status: 'in-progress'     },
   { text: 'Deploy dbt Transformation Governance',    status: 'complete'     },
-  { text: 'Govern Enterprise Data with Dataplex',    status: 'complete'     },
+  { text: 'Govern Enterprise Data with Dataplex',    status: 'in-progress'     },
   { text: 'Validate Acquisition Onboarding Pattern', status: 'in-progress' },
   { text: 'Enable Conversational Analytics (Teams)', status: 'in-progress'  },
   { text: 'Activate AI/Semantic Layer',              status: 'in-progress'  },

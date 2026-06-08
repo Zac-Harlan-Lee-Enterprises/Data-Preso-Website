@@ -20,7 +20,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
     color: "#f59e0b",
     icon: "Database",
     currentState:
-      "Canonical subscriber model established for DSI and Falcon properties. Bronze and Silver layers operational in BigQuery. dbt handling cross-property transformations with 40+ active models.",
+      "BigQuery, dbt, and Airflow are operational. However, no canonical semantic model exists across properties — each dataset uses source-specific logic. Phase 1 is establishing the subscription rates canonical model as the first reusable pattern.",
     targetState:
       "All 77+ Lee properties feeding into a unified canonical model. Single KPI definitions across the enterprise. Zero source-specific logic leaking into the BI layer.",
     businessImpact:
@@ -35,7 +35,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
     color: "#0ea5e9",
     icon: "Brain",
     currentState:
-      "AI/Semantic layer in BigQuery under active development. Context files (Markdown documentation, dbt metadata, Dataplex metadata) established. Vertex AI and Gemini connected to governance-checked data paths.",
+      "BigQuery and Vertex AI infrastructure is in place. No governed conversational AI path currently exists — analytics requests require BI team tickets. Phase 1 establishes the first governed natural language interface over the subscription rates model.",
     targetState:
       "Full AI/Semantic layer with governed access paths across all domains. Conversational analytics available to business users via Microsoft Teams. AI models grounded in enterprise knowledge with policy enforcement.",
     businessImpact:
@@ -50,7 +50,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
     color: "#10b981",
     icon: "Shield",
     currentState:
-      "Dataplex metadata governance operational. Policy checks integrated into conversational AI flow. Column-level access controls enforced on Gold and AI/Semantic layers. Lineage tracking active for dbt transformations.",
+      "Dataplex is provisioned but governance patterns are not yet established. No systematic data lineage or access policy layer exists across the medallion architecture. Governance design is being built alongside Phase 1.",
     targetState:
       "Automated lineage tracking across all transformations from source to Gold. Attribute-based access control for all data domains. Governance operates as a background service — invisible to users, inviolable in design.",
     businessImpact:
@@ -65,7 +65,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
     color: "#f97316",
     icon: "GitMerge",
     currentState:
-      "Canonical subscriber model validated with Company X integration scenario. Medallion architecture pattern documented. Airflow DAG templates for new source onboarding available. dbt mapping patterns established.",
+      "Acquisitions currently require 9–12 months of custom integration work before data becomes analytically useful. No reusable onboarding pattern exists. Phase 1's canonical subscriber model, once proven, becomes the repeatable template for all future acquisitions.",
     targetState:
       "Any new acquisition maps into the canonical model in 4–8 weeks vs. the historical 9–12 months. Standard onboarding playbook with automated validation gates and monitoring dashboards available from day one.",
     businessImpact:
@@ -80,7 +80,7 @@ export const READINESS_INDICATORS: ReadinessIndicator[] = [
     color: "#8b5cf6",
     icon: "Users",
     currentState:
-      "Looker and DOMO dashboards available for Gold-layer consumption. Direct SQL access available for technical analysts via governed BigQuery paths. Engineering handles most ad-hoc data requests.",
+      "Looker and Domo dashboards serve routine reporting. Ad-hoc data questions require BI team ticket submission — there is no self-service path for unstructured queries. Phase 1 targets moving routine subscription rate questions out of the ticket queue entirely.",
     targetState:
       "Business users query enterprise data through natural language via Teams integration. Analysts build dashboards without engineering intervention. Self-service rate above 70% for routine data requests.",
     businessImpact:
