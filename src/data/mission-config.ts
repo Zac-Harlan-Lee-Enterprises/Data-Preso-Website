@@ -40,14 +40,14 @@ export const READINESS_VALUES = {
 //   'pending'     — dim check, dim text, "PENDING" badge
 
 export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progress' | 'pending' }[] = [
-  { text: 'Establish Canonical Subscriber Models',    status: 'complete'     },
-  { text: 'Build Medallion Architecture (5 Layers)', status: 'in-progress'     },
-  { text: 'Deploy dbt Transformation Governance',    status: 'complete'     },
-  { text: 'Govern Enterprise Data with Dataplex',    status: 'in-progress'     },
-  { text: 'Validate Acquisition Onboarding Pattern', status: 'in-progress' },
-  { text: 'Enable Conversational Analytics (Teams)', status: 'in-progress'  },
-  { text: 'Activate AI/Semantic Layer',              status: 'in-progress'  },
-  { text: 'Prepare Agentic AI Foundation',           status: 'pending'      },
+  { text: 'Prove Canonical Subscriber Model on Subscription Rates', status: 'in-progress' },
+  { text: 'Build Medallion Architecture (Bronze → Gold)',           status: 'in-progress' },
+  { text: 'Establish dbt Transformation Governance Patterns',       status: 'in-progress' },
+  { text: 'Govern Enterprise Data with Dataplex',                   status: 'in-progress' },
+  { text: 'Position Acquisition Onboarding Against Canonical Model',status: 'in-progress' },
+  { text: 'Enable Natural Language Self-Serve via Teams',           status: 'in-progress' },
+  { text: 'Activate AI/Semantic Layer',                             status: 'pending'     },
+  { text: 'Prepare Agentic AI Foundation',                          status: 'pending'     },
 ];
 
 // ── Bridge Crew ───────────────────────────────────────────────────────────────
