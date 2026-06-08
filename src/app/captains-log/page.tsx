@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 const INTERACTIONS = [
   {
     question: "How are our subscription trends trending against Q3 projections across all markets?",
-    answer: "Admiral Fletcher, digital subscriptions are up 14.2% versus Q3 projections across 61 markets. The strongest performers are Phoenix (+28%), Denver (+22%), and Austin (+19%). Three markets are below projection — all recently acquired properties now showing recovery curves consistent with canonical model stabilization.",
+    answer: "Captain Harlan, digital subscriptions are up 14.2% versus Q3 projections across 61 markets. The strongest performers are Phoenix (+28%), Denver (+22%), and Austin (+19%). Three markets are below projection — all recently acquired properties now showing recovery curves consistent with canonical model stabilization.",
     metrics: ['14.2% above projection', '61 / 77 markets tracked', '3 markets in recovery'],
     color: '#0ea5e9',
   },
@@ -23,7 +23,7 @@ const INTERACTIONS = [
   },
   {
     question: "Surface any underperforming markets that need executive attention.",
-    answer: "Proactive analysis complete, Admiral. Three markets surfaced: Memphis (-8.2% digital subscriber growth vs cohort), Omaha (advertiser yield 22% below regional average), and Fresno (churn rate elevated 3.1 standard deviations above enterprise median). I've prepared briefing packets for each with root cause hypotheses and comparable market recovery patterns. Shall I route these to the relevant property leadership?",
+    answer: "Proactive analysis complete, Captain. Three markets surfaced: Memphis (-8.2% digital subscriber growth vs cohort), Omaha (advertiser yield 22% below regional average), and Fresno (churn rate elevated 3.1 standard deviations above enterprise median). I've prepared briefing packets for each with root cause hypotheses and comparable market recovery patterns. Shall I route these to the relevant property leadership?",
     metrics: ['3 markets flagged', 'Root causes identified', 'Recovery patterns matched'],
     color: '#8b5cf6',
   },
@@ -142,7 +142,7 @@ export default function CaptainsLogPage() {
               operating system of the enterprise.
             </p>
             <p className="text-lcars-text italic">
-              — Captain V. Fletcher, CIO, Lee Enterprises
+              — Captain Z. Harlan, Mission Commander, USS Lee Enterprise
             </p>
           </div>
         </motion.div>
@@ -179,7 +179,7 @@ export default function CaptainsLogPage() {
                       style={{ backgroundColor: interaction.color }}
                     />
                     <span className="font-mono text-[9px] text-lcars-dim tracking-wider">
-                      ADM. FLETCHER · STARFLEET COMMAND
+                      CPT. HARLAN · MISSION COMMANDER
                     </span>
                   </div>
                   <p className="text-sm text-lcars-text">"{interaction.question}"</p>

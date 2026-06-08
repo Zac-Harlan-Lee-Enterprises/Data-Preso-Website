@@ -11,7 +11,7 @@
 // ── Bridge Overview ──────────────────────────────────────────────────────────
 
 /** Overall mission progress shown in the radial dial on the Bridge Overview */
-export const MISSION_PROGRESS = 78;
+export const MISSION_PROGRESS = 15;
 
 // ── Strategic Readiness Indicators ──────────────────────────────────────────
 // Each value is shown as a progress bar and percentage on the Bridge Overview.
@@ -44,8 +44,8 @@ export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progre
   { text: 'Build Medallion Architecture (Bronze → Gold)',           status: 'in-progress' },
   { text: 'Establish dbt Transformation Governance Patterns',       status: 'in-progress' },
   { text: 'Govern Enterprise Data with Dataplex',                   status: 'in-progress' },
-  { text: 'Position Acquisition Onboarding Against Canonical Model',status: 'in-progress' },
   { text: 'Enable Natural Language Self-Serve via Teams',           status: 'in-progress' },
+  { text: 'Position Acquisition Onboarding Against Canonical Model',status: 'pending'     },
   { text: 'Activate AI/Semantic Layer',                             status: 'pending'     },
   { text: 'Prepare Agentic AI Foundation',                          status: 'pending'     },
 ];
