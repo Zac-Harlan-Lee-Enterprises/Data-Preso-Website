@@ -58,7 +58,7 @@ export const MISSION_OBJECTIVES: { text: string; status: 'complete' | 'in-progre
 
 export const CREW_CONFIG: Record<string, { rank: string; role: string; strategicDomain: string }> = {
   fletcher: {
-    rank:             'Starfleet Command',
+    rank:             'Admiral',
     role:             'Chief Information Officer',
     strategicDomain:  'Executive Command & Strategic Alignment',
   },

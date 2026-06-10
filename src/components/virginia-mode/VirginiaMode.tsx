@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronRight, SkipForward } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { publicUrl } from '@/lib/utils';
+import { MISSION_PROGRESS, READINESS_VALUES } from '@/data/mission-config';
 
 interface Step {
   id: string;
@@ -63,7 +64,7 @@ const STEPS: Step[] = [
     body: 'Lee\'s AI platform is built on a governance-first foundation. Every AI response passes through a mandatory policy check. Every data asset is catalogued with lineage. This is what separates trusted enterprise AI from experimental technology.',
     visual: 'ai-vision',
     accent: '#8b5cf6',
-    computerVoice: 'Governance layer active. Dataplex policy enforcement: operational. AI readiness status: 45 percent and advancing. All AI access conditionally authorized through governance checkpoint.',
+    computerVoice: `Governance layer active. Dataplex policy enforcement: operational. AI readiness status: ${READINESS_VALUES.aiReadiness} percent and advancing. All AI access conditionally authorized through governance checkpoint.`,
     navigateTo: '/computer',
   },
   {
@@ -87,6 +88,8 @@ const STEPS: Step[] = [
   },
 ];
 
+const ADMIRAL_RED = '#ef4444';
+
 function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
   if (step.visual === 'captain' || step.visual === 'handoff') {
     return (
@@ -98,12 +101,12 @@ function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
       >
         <div
           className="relative w-32 h-32 rounded-full overflow-hidden"
-          style={{ boxShadow: `0 0 40px ${step.accent}60, 0 0 80px ${step.accent}20` }}
+          style={{ boxShadow: `0 0 40px ${ADMIRAL_RED}60, 0 0 80px ${ADMIRAL_RED}20` }}
         >
           <div
             className="absolute inset-0 rounded-full"
             style={{
-              background: `conic-gradient(${step.accent} 0deg, transparent 30deg, ${step.accent} 60deg, transparent 90deg, ${step.accent} 120deg)`,
+              background: `conic-gradient(${ADMIRAL_RED} 0deg, transparent 30deg, ${ADMIRAL_RED} 60deg, transparent 90deg, ${ADMIRAL_RED} 120deg)`,
               animation: 'spin 8s linear infinite',
             }}
           />
@@ -116,7 +119,7 @@ function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
           </div>
         </div>
         <div className="text-center">
-          <div className="font-mono text-sm tracking-widest" style={{ color: step.accent }}>
+          <div className="font-mono text-sm tracking-widest" style={{ color: ADMIRAL_RED }}>
             VIRGINIA FLETCHER — STARFLEET COMMAND
           </div>
           <div className="font-mono text-xs text-lcars-muted mt-1 tracking-wider">
@@ -133,7 +136,7 @@ function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: visible ? 1 : 0, y: visible ? 0 : 20 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="grid grid-cols-3 gap-4 w-full max-w-xl"
+        className="flex flex-col gap-3 w-full"
       >
         {[
           { label: 'ENTERPRISE DATA\nMODERNIZATION', color: '#f59e0b', icon: '◈' },
@@ -142,20 +145,22 @@ function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
         ].map((pillar, i) => (
           <motion.div
             key={pillar.label}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5 + i * 0.15 }}
-            className="glass rounded-xl p-5 text-center"
+            className="glass rounded-xl px-4 py-3 flex items-center gap-3"
             style={{ borderColor: `${pillar.color}30` }}
           >
-            <div className="text-3xl mb-3" style={{ color: pillar.color }}>
+            <div className="text-2xl shrink-0" style={{ color: pillar.color }}>
               {pillar.icon}
             </div>
             <div
               className="font-mono text-xs tracking-wider leading-relaxed"
               style={{ color: pillar.color }}
             >
-              {pillar.label}
+              {pillar.label.split('\n').map((line, j) => (
+                <div key={j}>{line}</div>
+              ))}
             </div>
           </motion.div>
         ))}
@@ -231,7 +236,7 @@ function VisualCaption({ step, visible }: { step: Step; visible: boolean }) {
 
   if (step.visual === 'ai-vision') {
     const phases = [
-      { label: 'Phase 1', title: 'Canonical Subscriber Model', status: 'ACTIVE', color: '#f59e0b', pct: 55 },
+      { label: 'Phase 1', title: 'Canonical Subscriber Model', status: 'ACTIVE', color: '#f59e0b', pct: MISSION_PROGRESS },
       { label: 'Phase 2', title: 'Semantic Governance', status: '2026', color: '#0ea5e9', pct: 0 },
       { label: 'Phase 3', title: 'Agentic Enterprise AI', status: '2027', color: '#8b5cf6', pct: 0 },
     ];
