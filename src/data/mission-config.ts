@@ -92,4 +92,9 @@ export const CREW_CONFIG: Record<string, { rank: string; role: string; strategic
     role:             'Platform Integration Engineer',
     strategicDomain:  'Systems Integration & Connectivity',
   },
+  pierson: {
+    rank:             'Mission Specialist',
+    role:             'Product Owner',
+    strategicDomain:  'Product Vision & Backlog Governance',
+  },
 };

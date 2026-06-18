@@ -50,6 +50,16 @@ const BASE_CREW: CrewMember[] = [
     division: "command",
   },
   {
+    id: "pierson",
+    name: "Michelle Pierson",
+    rank: "Mission Specialist",
+    role: "Product Owner",
+    photo: "/crew/MichellePierson.jpeg",
+    strategicDomain: "Product Vision & Backlog Governance",
+    bio: "Owning the mission backlog and shaping product priorities, ensuring every sprint advances the platform toward measurable business outcomes.",
+    division: "command",
+  },
+  {
     id: "hadley",
     name: "Matt Hadley",
     rank: "Chief Science Officer",
