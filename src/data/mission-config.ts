@@ -94,7 +94,7 @@ export const CREW_CONFIG: Record<string, { rank: string; role: string; strategic
   },
   pierson: {
     rank:             'Mission Specialist',
-    role:             'Product Owner',
+    role:             'Keeper of the Prime Backlog',
     strategicDomain:  'Product Vision & Backlog Governance',
   },
 };
